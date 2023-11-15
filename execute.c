@@ -1,31 +1,52 @@
 #include "monty.h"
 
 /**
- * execute - executes
- * @content: line content
- * @stack: head liked list
- * @counter: line counter
- * @file: pointer
+ * get_builtin - Parses the instruction with the function.
+ * @token: type pointer extern var char
+ * @stack: type pointer node of data struct
+ * @line_number: line of instructions
+ * Return: Retunr the funtion
  */
-int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
+int get_builtin(char *token, stack_t **stack, unsigned int line_number)
 {
-	instruction_t = {
-			{"push", push}, {"pall", pall},
-			{"pint", pint},
-			{"pop", pop},
-			{"swap", swap},
-			{"add", add},
-			{"nop", nop},
-			{"sub", sub},
-			{"div", div},
-			{"mul", mul},
-			{"mod", mod},
-			{"pchar", pchar},
-			{"pstr", pstr},
-			{"rotl", rotl},
-			{"rotr", rotr},
-			{"stack", stack},
-			{"queue", queue},
-			{NULL, NULL}
-			};
+	instruction_t op_built[] = {
+		{ "push", push },
+		{ "pall", pall},
+		{ "pop", pop },
+		{ "add", add },
+		{ "nop", nop },
+		{ "sub", sub },
+		{ "pall", pall },
+		{ "pint", pint },
+		{ "swap", swap },
+		{ "mul", mul },
+		{ "div", div_m },
+		{ "pchar", pchar },
+		{ "mod", mod_m },
+		{ "\n", nop },
+		{ " ", nop },
+		{ "\t", nop },
+		{ "pstr", pstr_t },
+		{ "rotl", rotrl },
+		{ "rotr", rotr },
+		{ NULL, NULL }
+	};
+	int i, flag = 0;
+	char *argumentos = NULL;
+
+	if (stack == NULL || token == NULL)
+		return (0);
+	argumentos = token;
+	for (i = 0; op_built[i].opcode; i++)
+	{
+		if (strcmp(argumentos, op_built[i].opcode) == 0)
+		{
+			flag = 1;
+			op_built[i].f(stack, line_number);
+			break;
+		}
+	}
+	if (flag == 0)
+		stderr_unknown(token, line_number);
+	return (0);
 }
