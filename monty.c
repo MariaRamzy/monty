@@ -1,5 +1,5 @@
 #include "monty.h"
-bus_t bus = {NULL, NULL, NULL, 0}
+globales_t globalvar = {NULL, NULL, NULL, 0}
 
 /**
  * main - monty code interpreter
@@ -9,39 +9,39 @@ bus_t bus = {NULL, NULL, NULL, 0}
  */
 int main(int argc, char *argv[])
 {
-	char *content;
-	FILE *file;
+	char *line_buf;
+	FILE *fd;
 	size_t size = 0;
 	ssize_t read_line = 1;
 	stack_t *stack = NULL;
-	unsigned int counter = 0;
+	unsigned int number = 0;
 
 	if (argc != 2)
 	{
 		printf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	file = open(argv[1], "r");
-	bus.file = file;
-	if (!file)
+	fd = open(argv[1], "r");
+	bus.fd = fd;
+	if (!fd)
 	{
 		printf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	while (read_line > 0)
 	{
-		content = NULL;
-		read_line = getline(&content, &size, file);
-		bus.content = content;
-		counter++;
+		line_buf = NULL;
+		read_line = getline(&line_buf, &size, fd);
+		bus.line_buf = line_buf;
+		number++;
 		if (read_line > 0)
 		{
-			execute(content, &stack, counter, file);
+			execute(line_buf, &stack, number, fd);
 		}
-		free(content);
+		free(line_buf);
 	}
 	free_stack(stack);
-	close(file);
+	close(fd);
 	
 	return (0);
 }
