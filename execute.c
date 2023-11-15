@@ -16,7 +16,6 @@ int get_builtin(char *token, stack_t **stack, unsigned int line_number)
 		{ "add", add },
 		{ "nop", nop },
 		{ "sub", sub },
-		{ "pall", pall },
 		{ "pint", pint },
 		{ "swap", swap },
 		{ "mul", mul },
