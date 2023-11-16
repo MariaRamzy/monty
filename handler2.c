@@ -16,7 +16,9 @@ void nop(stack_t **stack, unsigned int line_number)
 /**
  * add - adds the top two elements of the stack
  * @stack: head of linkedlist
+ *
  * @line_number: line number of the instruction
+ * Return: No return
  */
 void add(stack_t **stack, unsigned int line_number)
 {
