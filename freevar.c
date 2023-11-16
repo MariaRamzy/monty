@@ -7,17 +7,17 @@
  */
 void free_dlistint(stack_t *stack)
 {
-	stack_t *aux = NULL;
-	stack_t *temp = NULL;
+stack_t *aux = NULL;
+stack_t *temp = NULL;
 
-	temp = stack;
-	while (temp != NULL)
-	{
-		aux = temp->next;
-		free(temp);
-		temp = aux;
-	}
-	stack = NULL;
+temp = stack;
+while (temp != NULL)
+{
+aux = temp->next;
+free(temp);
+temp = aux;
+}
+stack = NULL;
 }
 
 /**
@@ -27,6 +27,6 @@ void free_dlistint(stack_t *stack)
  */
 void free_globalvars(void)
 {
-	fclose(globalvar.fd);
-	free(globalvar.line_buf);
+fclose(globalvar.fd);
+free(globalvar.line_buf);
 }
