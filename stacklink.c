@@ -46,7 +46,7 @@ int check_opcode(stack_t *stack)
 
 	if (stack->n == STACK)
 		return (STACK);
-	else if (stack->n == QUEUE)
+	if (stack->n == QUEUE)
 		return (QUEUE);
 	return (ret_val);
 }
