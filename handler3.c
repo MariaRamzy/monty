@@ -1,5 +1,5 @@
 #include "monty.h"
-
+#include <stdio.h>
 /**
  * div_m - divs 2dn top node by the top element of the stack.
  * @stack: head of linkedlist
