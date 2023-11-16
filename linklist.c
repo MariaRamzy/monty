@@ -26,7 +26,7 @@ stack_t *create_node_stackfirst(stack_t **stack, int n)
  * create_node_stackend - create a node stack at end.
  * @stack: A pointer to top and bottom stack.
  * @n: the value
- * Return: the node
+ * Return: the node created
  */
 stack_t *create_node_stackend(stack_t **stack, int n)
 {
