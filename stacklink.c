@@ -23,7 +23,8 @@ int create_node_stack(stack_t **stack)
 /**
  * free_node_stack - Frees a stack_t stack.
  * @stack: A pointer to top and bottom stack.
- */
+ * Return
+ * /
 void free_node_stack(stack_t **stack)
 {
 	stack_t *temp_node = *stack;
