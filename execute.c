@@ -2,10 +2,10 @@
 
 /**
  * get_builtin - Parses the instruction with the function.
- * @token: type pointer extern var char
- * @stack: type pointer node of data struct
- * @line_number: line of instructions
- * Return: Retunr the funtion
+ * @token: type pointer extern var char.
+ * @stack: type pointer node of data struct.
+ * @line_number: line of instructions.
+ * Return: Retunr the funtion.
  */
 int get_builtin(char *token, stack_t **stack, unsigned int line_number)
 {
