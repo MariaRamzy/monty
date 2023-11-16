@@ -1,6 +1,7 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <string.h>
 #include <fcntl.h>
@@ -118,23 +119,5 @@ void free_dlistint(stack_t *stack);
 void free_globalvars(void);
 void rotr(stack_t **stack, unsigned int line_number);
 stack_t *add_dnodeint(stack_t **head, int n);
-
-/* UNUSED F
-void pop(stack_t **stack, unsigned int line_number);
-void pint(stack_t **stack, unsigned int line_number);
-int cmd_monty(FILE *fd);
-void free_tok(void);
-int check_delim(char stream, char *delim);
-int wstrlen(char *str, char *delim);
-int wcounter(char *str, char *delim);
-char **strtow(char *str, char *delim);
-char *wnext(char *str, char *delim);
-int create_node_stack(stack_t **stack);
-void free_node_stack(stack_t **stack);
-int no_line(char *line, char *delim);
-int check_opcode(stack_t *stack);
-*/
-
-
 
 #endif
