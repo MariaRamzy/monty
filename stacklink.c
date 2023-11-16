@@ -38,20 +38,15 @@ void free_node_stack(stack_t **stack)
 /**
  * check_opcode - checks if STACK or QUEUE.
  * @stack: A pointer to top and bottom stack.
- * Return: void
+ * Return: The value of Stack or Queue
  */
-void check_opcode(stack_t **stack)
+int check_opcode(stack_t *stack)
 {
 	int ret_val = 2;
 
-	while (STACK)
-	{
-		(*stack)->n = STACK;
-		(void)ret_val;
-	}
-	while (QUEUE)
-	{
-		(*stack)->n = QUEUE;
-		(void)ret_val;
-	}
+	if (stack->n == STACK)
+		return (STACK);
+	else if (stack->n == QUEUE)
+		return (QUEUE);
+	return (ret_val);
 }
