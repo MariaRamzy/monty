@@ -7,9 +7,9 @@
  */
 void pop_e(unsigned int line_number)
 {
-	fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
-	free_globalvars();
-	exit(EXIT_FAILURE);
+fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
+free_globalvars();
+exit(EXIT_FAILURE);
 }
 
 /**
@@ -19,9 +19,9 @@ void pop_e(unsigned int line_number)
  */
 void pint_e(unsigned int line_number)
 {
-	fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
-	free_globalvars();
-	exit(EXIT_FAILURE);
+fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
+free_globalvars();
+exit(EXIT_FAILURE);
 }
 
 /**
@@ -32,9 +32,9 @@ void pint_e(unsigned int line_number)
  */
 void op_e(unsigned int line_number, char *op)
 {
-	fprintf(stderr, "L%u: can't %s, stack too short\n", line_number, op);
-	free_globalvars();
-	exit(EXIT_FAILURE);
+fprintf(stderr, "L%u: can't %s, stack too short\n", line_number, op);
+free_globalvars();
+exit(EXIT_FAILURE);
 }
 /**
  * pchar_e - phar error msg for 0 stack & and non-char val.
@@ -44,9 +44,9 @@ void op_e(unsigned int line_number, char *op)
  */
 void pchar_e(unsigned int line_number, char *msg)
 {
-	fprintf(stderr, "L%u: can't pchar, %s\n", line_number, msg);
-	free_globalvars();
-	exit(EXIT_FAILURE);
+fprintf(stderr, "L%u: can't pchar, %s\n", line_number, msg);
+free_globalvars();
+exit(EXIT_FAILURE);
 }
 
 /**
@@ -56,7 +56,7 @@ void pchar_e(unsigned int line_number, char *msg)
  */
 void div_e(unsigned int line_number)
 {
-	fprintf(stderr, "L%u: division by zero\n", line_number);
-	free_globalvars();
-	exit(EXIT_FAILURE);
+fprintf(stderr, "L%u: division by zero\n", line_number);
+free_globalvars();
+exit(EXIT_FAILURE);
 }
