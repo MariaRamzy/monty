@@ -5,7 +5,7 @@
  * @stack: head of linkedlist
  * @line_number: line number of the instruction
  *
- * Return: No return
+ * Return: No return for void function
  */
 void push(stack_t **stack, unsigned int line_number)
 {
@@ -38,7 +38,7 @@ void push(stack_t **stack, unsigned int line_number)
  * @stack: head of linkedlist
  * @line_number: line number of the instruction
  *
- * Return: No return
+ * Return: No return for void function
  */
 void pall(stack_t **stack, unsigned int line_number)
 {
@@ -74,7 +74,7 @@ void pall(stack_t **stack, unsigned int line_number)
  * @stack: head of linkedlist
  * @line_number: line number of the instruction
  *
- * Return: No return
+ * Return: No return for void function
  */
 void pint(stack_t **stack, unsigned int line_number)
 {
@@ -99,7 +99,7 @@ void pint(stack_t **stack, unsigned int line_number)
  * @stack: head of linkedlist
  * @line_number: line number of the instruction
  *
- * Return: No return
+ * Return: No return for void function
  */
 void pop(stack_t **stack, unsigned int line_number)
 {
@@ -150,7 +150,7 @@ void pop(stack_t **stack, unsigned int line_number)
  * @stack: head of linkedlist
  * @line_number: line number of the instruction
  *
- * Return: No return
+ * Return: No return for void function
  */
 void swap(stack_t **stack, unsigned int line_number)
 {
